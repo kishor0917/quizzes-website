@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Result</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Your Total Score:</h2>
+    <h1 id="finalScore">0</h1>
+
+    <canvas id="scoreChart" width="250" height="250"></canvas>
+
+    <a href="thankyou.html"><button>Finish</button></a>
+  </div>
+
+  <script>
+    const score = Number(sessionStorage.getItem("totalScore"));
+    const total = Number(sessionStorage.getItem("totalQuestions"));
+
+    document.getElementById("finalScore").innerText = `${score} / ${total}`;
+
+    const wrong = total - score;
+
+    const ctx = document.getElementById('scoreChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Correct', 'Wrong'],
+        datasets: [{
+          data: [score, wrong],
+          backgroundColor: ['#4CAF50', '#F44336'],
+        }]
+      },
+      options: {
+        responsive: false,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

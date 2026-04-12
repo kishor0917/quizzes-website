@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python Quiz</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+     <div class="container">
+    <h2>🐍Python Quiz</h2>
+    <form id="pythonQuiz">
+      
+      <p>1. What is the correct syntax to output "hello world"?</p>
+      <label><input type="radio" name="q1" value="0"> echo("hello world")</label><br>
+      <label><input type="radio" name="q1" value="1"> print("hello world")</label><br>
+      <label><input type="radio" name="q1" value="0"> p("hello world")</label><br>
+       <br>
+      
+      
+      <p>2. How do you insert Comments in Python code?</p>
+      <label><input type="radio" name="q2" value="0"> //This is a comment</label><br>
+      <label><input type="radio" name="q2" value="1"> #This is a comment</label><br>
+      <label><input type="radio" name="q2" value="0">/*This is a comment*/</label><br>
+       
+      <br>
+       <p>3. What is the correct file extension for python files?</p>
+      <label><input type="radio" name="q3" value="0">.pt </label><br>
+      <label><input type="radio" name="q3" value="1">.py</label><br>
+      <label><input type="radio" name="q3" value="0">.pyth</label><br>
+      <br>
+      <p>4. Which of the following ia a correct variable name in python?</p>
+      <label><input type="radio" name="q4" value="0"> 2var </label><br>
+      <label><input type="radio" name="q4" value="0"> var-name</label><br>
+      <label><input type="radio" name="q4" value="1">var_1</label><br>
+      <br>
+      <p>5.Which data type is used to store text in Python?</p>
+      <label><input type="radio" name="q5" value="1"> str</label><br>
+      <label><input type="radio" name="q5" value="0"> int</label><br>
+      <label><input type="radio" name="q5" value="0"> float</label><br>
+      <br>
+      <p>6.Which Keyword is used to define a function in python?</p>
+      <label><input type="radio" name="q6" value="0">fun</label><br>
+      <label><input type="radio" name="q6" value="1">def</label><br>
+      <label><input type="radio" name="q6" value="0">define</label><br>
+      <br>
+      <p>7. What will print(2**3) output?</p>
+      <label><input type="radio" name="q7" value="0">9</label><br>
+      <label><input type="radio" name="q7" value="0">2</label><br>
+      <label><input type="radio" name="q7" value="1"> 8</label><br>
+      <br>
+      <p>8.What is the output of type(10.5)?</p>
+      <label><input type="radio" name="q8" value="0"> class 'str' </label><br>
+      <label><input type="radio" name="q8" value="1"> class 'float'</label><br>
+      <label><input type="radio" name="q8" value="0">class 'int'</label><br>
+      <br>
+      <p>9. which is the correct way to create a list in Python?</p>
+      <label><input type="radio" name="q9" value="0">  list={1,2,3}</label><br>
+      <label><input type="radio" name="q9" value="0">  list=(1,2,3)</label><br>
+      <label><input type="radio" name="q9" value="1">list=[1,2,3]</label><br>
+      <br>
+       <p>10. What is the result of len("Python")?</p>
+      <label><input type="radio" name="q10" value="0"> Error</label><br>
+      <label><input type="radio" name="q10" value="1"> 6</label><br>
+      <label><input type="radio" name="q10" value="0">5</label><br>
+      <br>
+      <button id="nextBtn" type="button" onclick= "submitQuiz('python')" disabled>Next</button>
+
+      
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

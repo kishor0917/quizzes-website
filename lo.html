@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Quiz</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .question {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    input[type="radio"]:disabled + span {
+      color: gray;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🐍 Python Quiz</h2>
+
+  <form id="quizForm">
+    <div class="question" data-question="q1">
+      <p>1. What is the correct syntax to output "Hello World" in Python?</p>
+      <label><input type="radio" name="q1"> <span>echo("Hello World")</span></label>
+      <label><input type="radio" name="q1" data-correct="true"> <span>print("Hello World")</span></label>
+      <label><input type="radio" name="q1"> <span>p("Hello World")</span></label>
+    </div>
+
+    <div class="question" data-question="q2">
+      <p>2. How do you insert comments in Python?</p>
+      <label><input type="radio" name="q2"> <span>// This is a comment</span></label>
+      <label><input type="radio" name="q2" data-correct="true"> <span># This is a comment</span></label>
+      <label><input type="radio" name="q2"> <span>/* This is a comment */</span></label>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="result" style="font-weight:bold; font-size:18px;"></p>
+
+  <script>
+    // Lock other options once one is selected
+    document.querySelectorAll('.question').forEach(question => {
+      const radios = question.querySelectorAll('input[type="radio"]');
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          radios.forEach(r => {
+            if (!r.checked) r.disabled = true;
+          });
+        });
+      });
+    });
+
+    // Calculate score
+    document.getElementById('quizForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      let score = 0;
+      const questions = document.querySelectorAll('.question');
+
+      questions.forEach(question => {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        if (selected && selected.hasAttribute('data-correct')) {
+          score++;
+        }
+      });
+
+      document.getElementById('result').innerText = 'Your score: ${score}/${questions.length}';
+    });
+  </script>
+
+</body>
+</html>
